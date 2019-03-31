@@ -1,6 +1,7 @@
-package ru.avalon.java.dev.j10.labs;
+package ru.avalon.java.dev.j10.labs.Person;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  * Абстрактное представление о человеке.
@@ -14,7 +15,7 @@ import java.util.Date;
  * Из двух людей с одним и тем же именем больше будет тот,
  * который старше.
  */
-public interface Person extends Comparable {
+public interface Person extends Comparable<Person> {
 
     /**
      * Возвращает имя человека.
@@ -29,5 +30,5 @@ public interface Person extends Comparable {
      * @return дата рождения в виде экземпляра типа
      * {@link Date}
      */
-    Date getBirthDate();
+    LocalDate getBirthDate();
 }

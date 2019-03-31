@@ -1,4 +1,4 @@
-package ru.avalon.java.dev.j10.labs;
+package ru.avalon.java.dev.j10.labs.Sort;
 
 import java.util.Comparator;
 
@@ -38,4 +38,5 @@ public interface Sort {
      *                   элементов массива {@code array}
      */
     void sort(Object[] array, Comparator comparator);
+    
 }

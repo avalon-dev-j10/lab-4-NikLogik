@@ -1,6 +1,15 @@
 package ru.avalon.java.dev.j10.labs;
 
+import ru.avalon.java.dev.j10.labs.Person.Person;
+import ru.avalon.java.dev.j10.labs.Person.PersonCreator;
+import ru.avalon.java.dev.j10.labs.Sort.Sorted;
+import ru.avalon.java.dev.j10.labs.Sort.Sort;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Comparator;
+import ru.avalon.java.dev.j10.labs.Sort.StringComparator;
 
 public class Main {
 
@@ -12,7 +21,13 @@ public class Main {
          * чтобы он содержал 20 строк, расположенных не
          * по порядку.
          */
-	    String[] strings = null;
+	    String[] strings = new String[20];
+            
+            //заполняем массив strings произвольными строками
+            for (int i = 0; i < strings.length; i++) {  
+            RandomString random = new RandomString();
+            strings[i] = random.getNewString();
+        }
 
 	    /*
 	     * TODO(Студент): Проинициализируйте массив persons
@@ -22,7 +37,15 @@ public class Main {
 	     * 2. Проинициализируйте массив persons 20
 	     *    экземплярыми созданного класса.
 	     */
-	    Person[] persons = null;
+            PersonCreator person;
+            
+	    Person[] persons = new Person[20];
+            for (int i = 0; i < 20; i++) {
+                    person = new PersonCreator();
+                    persons[i] = person.getInstance();
+                
+        }
+            
 
         /*
          * TODO(Студент): Проинициализируйте переменную sort
@@ -32,7 +55,7 @@ public class Main {
          * 2. Проинициализируйте переменную sort экземпляром
          *    созданного класса.
          */
-        Sort sort = null;
+        Sort sort = new Sorted();
 
         /*
          * TODO(Студент): Проинициализируйте переменную comparator
@@ -44,7 +67,7 @@ public class Main {
          * 2. Проинициализируйте переменную comparator
          *    экземпляром созданного класса.
          */
-        Comparator comparator = null;
+        Comparator comparator = new StringComparator();
 
         /*
          * TODO(Студент): Отсортируйте массив persons по возрастанию
@@ -69,7 +92,7 @@ public class Main {
          *    что массив отсортирован по возрастанию.
          */
         sort.sort(strings);
-
+        
         /*
          * TODO(Студент): Отсортируйте массив strings по убыванию
          *
@@ -80,5 +103,7 @@ public class Main {
          *    что массив отсортирован по убыванию.
          */
         sort.sort(strings, comparator);
+        
+        
     }
 }
