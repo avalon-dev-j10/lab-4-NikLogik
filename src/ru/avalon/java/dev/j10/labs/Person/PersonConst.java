@@ -15,11 +15,11 @@ enum PersonConst {
     
     String name;
     
-    private PersonConst(){
+    PersonConst(){
         name = "No name";
     }
 
-    private PersonConst(String name) {
+    PersonConst(String name) {
         this.name = name;
     }
 
